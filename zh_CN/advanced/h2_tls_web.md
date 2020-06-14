@@ -9,6 +9,8 @@ V2RayClient --|-> Caddy -> V2RayServer -> Internet
 ::: tip CDN
 <!--如果有人试过可以套CF，请将括号内容删除。否则修改这一行-->
 H2 流量理论上跟 ws 一样可以被 Cloudflare 转发，记得在 dashboard 里打开 HTTP/2 开关。<sup>*（注意：笔者没有进行实际测试）*</sup>
+更正：测试和官方解释，[H2流量无法被Cloudflare转发](https://support.cloudflare.com/hc/en-us/articles/200168076)
+因为Cloudflare和用户之间可以通过H1,H2和未来的H3连接，但Cloudflare和网站之间只使用HTTP1.1沟通。
 :::
 
 ## 缺陷
